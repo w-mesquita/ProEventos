@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProEventos.API", "Back\src\ProEventos.API\ProEventos.API.csproj", "{629A994F-7582-420D-A5C4-6D702EC40B85}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{629A994F-7582-420D-A5C4-6D702EC40B85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{629A994F-7582-420D-A5C4-6D702EC40B85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{629A994F-7582-420D-A5C4-6D702EC40B85}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{629A994F-7582-420D-A5C4-6D702EC40B85}.Debug|x64.Build.0 = Debug|Any CPU
+		{629A994F-7582-420D-A5C4-6D702EC40B85}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{629A994F-7582-420D-A5C4-6D702EC40B85}.Debug|x86.Build.0 = Debug|Any CPU
+		{629A994F-7582-420D-A5C4-6D702EC40B85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{629A994F-7582-420D-A5C4-6D702EC40B85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{629A994F-7582-420D-A5C4-6D702EC40B85}.Release|x64.ActiveCfg = Release|Any CPU
+		{629A994F-7582-420D-A5C4-6D702EC40B85}.Release|x64.Build.0 = Release|Any CPU
+		{629A994F-7582-420D-A5C4-6D702EC40B85}.Release|x86.ActiveCfg = Release|Any CPU
+		{629A994F-7582-420D-A5C4-6D702EC40B85}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E627E7A0-E7F6-48EB-AE11-7688854E07F3} = {94344DEC-F4FE-461D-8CF6-EE7CA5B6766C}
+		{629A994F-7582-420D-A5C4-6D702EC40B85} = {E627E7A0-E7F6-48EB-AE11-7688854E07F3}
+	EndGlobalSection
+EndGlobal
