@@ -11,3 +11,42 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 /* Importing Datepicker SCSS file. */
 @import "~ngx-bootstrap/datepicker/bs-datepicker";
+
+body{
+  background-color: #f0f1f3;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+
+  :hover{
+    color: #ff2052;
+  }
+}
+
+.danger-snackbar {
+  background: #ef5350;
+
+  .mat-simple-snackbar-action {
+    color: #fff !important;
+  }
+}
+
+.success-snackbar {
+  background: #28a745;
+
+  .mat-simple-snackbar-action {
+    color: #fff !important;
+  }
+}
+
+.warning-snackbar {
+  background: #d7df23;
+  color: #000 !important;
+
+  .mat-simple-snackbar-action {
+    color: #000 !important;
+  }
+}

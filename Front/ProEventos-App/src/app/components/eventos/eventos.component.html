@@ -1,5 +1,4 @@
-<h1 class="mt-2">Eventos</h1>
-<mat-divider></mat-divider>
+<app-titulo [titulo]="'Eventos'"></app-titulo>
 
 <div action="" class="form">
   <div class="form-group mb-2 mt-2">
@@ -9,13 +8,19 @@
     placeholder="Filtrar por ..."
     style="max-width:250px;"
     [(ngModel)]="filtroEventos"
+    autocomplete="off"
     >
   </div>
 </div>
 <table class="table table-striped">
   <thead class="table-dark">
     <tr>
-      <th><button class="btn btn-outline-light btn-sm" (click)="mostrarImagem()">{{!showImage ? "Exibir" : "Ocultar"}}</button></th>
+      <th>
+        <button class="btn btn-outline-light btn-sm" (click)="mostrarImagem()">
+          <i class="{{!showImage ? 'fa fa-eye' : 'fa fa-eye-slash'}}"></i>
+          {{!showImage ? "Exibir" : "Ocultar"}}
+        </button>
+      </th>
       <th>#</th>
       <th>Tema</th>
       <th>Local</th>
@@ -25,7 +30,8 @@
       <th>Opções</th>
     </tr>
   </thead>
-  <tbody *ngIf="eventos && eventos.length">
+
+  <tbody *ngIf="eventosFiltrados && eventosFiltrados.length && !isLoading">
     <tr *ngFor="let evento of eventosFiltrados">
       <td>
         <img [collapse]="!showImage" [isAnimated]="true"
@@ -38,19 +44,30 @@
       <td>{{evento.id}}</td>
       <td>{{evento.tema}}</td>
       <td>{{evento.local}}</td>
-      <td>{{evento.dataEvento}}</td>
+      <td>{{evento.dataEvento | date: 'dd/MM/yyyy - hh:mm' }}</td>
       <td>{{evento.qtdPessoas}}</td>
-      <td>{{evento.lotes[0]}}</td>
+      <td>{{evento.lotes[0].nome}}</td>
       <td>
-        <a href="#" [matMenuTriggerFor]="menu"><i class="fas fa-ellipsis-h"></i></a>
+        <a [matMenuTriggerFor]="menu"><i class="fas fa-ellipsis-v"></i></a>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item>Opção 1</button>
-          <button mat-menu-item>Opção 2</button>
+          <button mat-menu-item>
+            <i class="fa fa-edit"></i>
+            Editar
+          </button>
+          <button mat-menu-item (click)="excluir()">
+            <i class="fa fa-trash-alt"></i>
+            Excluir
+          </button>
         </mat-menu>
       </td>
     </tr>
   </tbody>
   <tfoot *ngIf="!eventosFiltrados.length">
+    <tr *ngIf="isLoading || !eventosFiltrados.length">
+      <td colspan="8">
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      </td>
+    </tr>
     <tr>
       <td colspan="8" >
         <h4>Nenhum evento encontrado!</h4>
